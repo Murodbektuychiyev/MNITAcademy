@@ -64,6 +64,19 @@ a:hover {
     top: 0;
     z-index: 1000;
 }
+
+/* header ichidagi navigatsiya havolalari uchun stil */
+.header .nav a {
+    /* ... mavjud stillar qoladi ... */
+    transition: color 0.3s ease; 
+}
+
+/* Faol havolani ko'k qilish */
+.header .nav .active-link {
+    color: var(--primary-blue) !important; /* Faol havolani doimiy ko'k rangda belgilash */
+    font-weight: 700; /* Qo'shimcha urg'u berish */
+}
+
 .header {
     height: var(--header-height);
     display: flex;
