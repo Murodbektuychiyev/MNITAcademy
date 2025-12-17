@@ -1,45 +1,41 @@
-/* Orbitron va Inter shriftlarini import qilish */
+/* ==================
+   1. ASOSIY STILLAR
+   ================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;700&display=swap');
 
 :root {
-    --primary-blue: #2A6EAC; /* Asosiy ko'k rang */
-    --bg-light: #F7F9FC; /* Och kulrang fon */
-    --text-dark: #1A202C; /* To'q matn rangi */
-    --text-muted: #4A5568; /* Kulrang matn rangi */
-    --border-color: #E2E8F0; /* Chegara rangi */
-    --maxw: 1200px; /* Kontentning maksimal kengligi */
-    --header-height: 80px; /* Header balandligi */
-    --success-green: #10B981; /* Yashil (Karyera, Level tag) */
+    --primary-blue: #2A6EAC;
+    --bg-light: #F7F9FC;
+    --text-dark: #1A202C;
+    --text-muted: #4A5568;
+    --border-color: #E2E8F0;
+    --maxw: 1200px;
+    --header-height: 80px;
+    --success-green: #10B981;
 }
 
-/* Barcha elementlar uchun Box-sizingni o'rnatish */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Body va Asosiy shrift sozlamalari */
 html, body {
-    /* Eslatma: 'Poppins' shrifti HTML orqali import qilingan bo'lishi kerak */
     font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
     background-color: var(--bg-light);
     line-height: 1.5;
-    overflow-x: hidden; /* Gorizontal skrollni oldini olish */
+    overflow-x: hidden;
+        scroll-behavior: smooth;
+
 }
 
-/* Sayt bo'ylab barcha skroll harakatlarini silliq qiladi */
-html {
-    scroll-behavior: smooth;
-}
-
-/* --- SARLAVHALAR (H-lar) UCHUN ORBITRON SHIRFTINI O'RNATISH --- */
 h1, h2, h3, h4, .logo {
     font-family: var(--font-heading); 
     color: var(--text-light);
     line-height: 1.2;
-    text-shadow: 0 0 5px rgba(0, 188, 212, 0.3); /* Yengil porlash */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
 }
 
 a {
@@ -48,32 +44,32 @@ a {
     transition: color 0.2s;
 }
 a:hover {
-    color: #dcd6d6; /* Qo'shimcha rang */
+    color: #dcd6d6;
 }
 
-/* Asosiy kontent konteyneri */
 .container {
     max-width: var(--maxw);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* --- 2. HEADER VA NAVIGATSIYA STILI --- */
+
+/* ===============================
+   2. HEADER VA NAVIGATSIYA STILI
+   =============================== */
 
 .header-wrapper {
     background-color: white;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05); 
-    position: sticky; /* Sticky header uchun */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* header ichidagi navigatsiya havolalari uchun stil */
 .header .nav a {
     transition: color 0.3s ease; 
 }
 
-/* Faol havolani ko'k qilish */
 .header .nav .active-link {
     color: var(--primary-blue);
     font-weight: 700;
@@ -95,9 +91,11 @@ a:hover {
     text-decoration: none;
     transition: color 0.3s;
 }
+
 .logo:hover {
     color: var(--primary-blue); 
 }
+
 .logo img {
     height: 24px;
     width: 24px;
@@ -105,6 +103,7 @@ a:hover {
     transition: transform 0.3s; 
     border-radius: 12px;
 }
+
 .logo:hover img {
     transform: rotate(10deg) scale(1.1); 
 }
@@ -122,7 +121,10 @@ a:hover {
     transform: translateY(-2px); 
 }
 
-/* --- 3. OVOZNI BOSHQARISH TUGMASI (Kattalashtirilgan) --- */
+
+/* ===================================
+   3. OVOZNI BOSHQARISH TUGMASI STILI
+   =================================== */
 
 .header-actions {
     display: flex;
@@ -144,10 +146,9 @@ a:hover {
     z-index: 1; 
     transition: all 0.3s ease;
     box-shadow: 0 0 8px rgba(0,0,0,0.15); 
-    min-width: 150px; /* Minimal kenglik */
+    min-width: 150px;
 }
 
-/* 3.1. Tovlanuvchi Chegara (Border Glow Animation) */
 .btn-sound-control::before {
     content: '';
     position: absolute;
@@ -155,21 +156,19 @@ a:hover {
     left: -50%;
     width: 200%;
     height: 200%;
-    /* Gradient ranglar */
     background: conic-gradient(
         from 0deg, 
-        rgba(66, 133, 244, 0.5) 0%, /* Blue */
-        rgba(255, 160, 0, 0.5) 30%, /* Orange */
-        rgba(0, 170, 0, 0.5) 60%, /* Green */
+        rgba(66, 133, 244, 0.5) 0%,
+        rgba(255, 160, 0, 0.5) 30%,
+        rgba(0, 170, 0, 0.5) 60%,
         rgba(66, 133, 244, 0.5) 100% 
     );
     z-index: -1;
     animation: rotate 4s linear infinite;
 }
 
-/* 3.2. Tugma Matni va Ichki Fon */
 .btn-sound-control::after {
-    content: attr(data-text); /* HTML elementidagi data-text atributidan matnni oladi */
+    content: attr(data-text);
     position: absolute;
     top: 3px; 
     right: 3px; 
@@ -186,7 +185,6 @@ a:hover {
     line-height: 1;
 }
 
-/* 3.3. Animatsiyalar */
 @keyframes rotate {
     to { transform: rotate(360deg); }
 }
@@ -205,23 +203,24 @@ a:hover {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-/* Ovoz yoqilganda (JS orqali qo'shiladi) */
 .btn-sound-control.active {
     animation: shake 0.3s infinite; 
 }
 
-/* --- 4. HERO SECTION STILI --- */
+
+/* ======================
+   4. HERO SECTION STILI
+   ====================== */
 
 .hero-wrapper {
     background: linear-gradient(90deg, #FFFFFF 0%, #F7F9FC 100%); 
-    /* Ekran balandligidan Header balandligini ayiramiz */
     min-height: calc(100vh - var(--header-height)); 
     display: flex; 
     align-items: center; 
-    position: relative; /* Video uchun kerak */
+    position: relative;
     overflow: hidden;
-    background-color: black; /* Video yuklanmaganda ko'rsatiladi */
 }
+
 .hero-wrapper video {
     position: absolute;
     top: 50%;
@@ -230,22 +229,25 @@ a:hover {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 0; /* Orqa fonda turishi uchun */
+    z-index: 0;
     transform: translate(-50%, -50%);
     object-fit: cover;
 }
+
 .hero-section {
     display: flex;
     align-items: center;
     padding: 60px 0;
     width: 100%;
     position: relative; 
-    z-index: 1; /* Kontent videodan yuqori bo'ladi */
+    z-index: 1;
 }
+
 .hero-left {
     flex: 1;
     padding-right: 40px;
 }
+
 .hero-left h1 {
     font-size: 3.5rem;
     font-weight: 800;
@@ -254,6 +256,7 @@ a:hover {
     color: var(--text-dark);
     color: white;
 }
+
 .hero-left p {
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -262,13 +265,11 @@ a:hover {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* CTA tugmalar guruhi */
 .cta-row {
     display: flex;
     gap: 15px;
 }
 
-/* Umumiy tugma uslubi */
 .btn {
     padding: 12px 25px;
     border-radius: 6px;
@@ -285,16 +286,19 @@ a:hover {
     background-color: var(--primary-blue);
     color: white;
 }
+
 .btn-primary:hover {
     background-color: #357ae8;
     transform: translateY(-3px); 
     border-radius: 14px;
 }
+
 .btn-secondary {
     background-color: transparent; 
     color: white; 
     border-color: rgba(255, 255, 255, 0.5); 
 }
+
 .btn-secondary:hover {
     border-color: white;
     color: white;
@@ -303,13 +307,13 @@ a:hover {
     border-radius: 14px;
 }
 
-/* Hero Rasmi joylashuvi */
 .hero-right {
     flex-shrink: 0;
     width: 45%;
     max-width: 500px;
     position: relative;
 }
+
 .image-card {
     background-color: white;
     padding: 15px;
@@ -320,31 +324,39 @@ a:hover {
     cursor: pointer; 
     transition: transform 0.4s ease, box-shadow 0.4s ease; 
 }
+
 .image-card:hover {
     transform: translateY(-10px); 
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); 
 }
+
 .image-card img {
     display: block;
     border-radius: 12px;
     transition: transform 0.4s ease;
 }
+
 .image-card:hover img {
     transform: scale(1.03); 
 }
 
-/* --- 5. UMUMIY BO'LIM SARLAVHALARI --- */
+
+/* ====================================
+   5. UMUMIY BO'LIM SARLAVHALARI STILI
+   ==================================== */
 
 .section-title {
     text-align: center;
     padding: 30px 0 50px 0;
 }
+
 .section-title h2 {
     font-size: 2.5rem;
     font-weight: 800; 
     margin-bottom: 10px;
     color: var(--text-dark);
 }
+
 .section-title p {
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -352,58 +364,69 @@ a:hover {
     margin: 0 auto;
 }
 
-/* --- 6. FEATURES SECTION (Nega MN IT Academy?) --- */
+
+/* ==========================
+   6. FEATURES SECTION STILI
+   ========================== */
 
 .features-section {
     padding: 70px 0;
     background-color: white;
 }
+
 .features-header-content {
     display: flex;
     align-items: center;
     gap: 40px;
     margin-bottom: 30px;
 }
+
 .features-image-container {
     flex-basis: 40%;
     flex-shrink: 0;
     max-width: 400px;
     cursor:pointer;
 }
+
 .features-image-container img {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .features-image-container img:hover {
     transform: scale(1.05);
     box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
 }
+
 .features-text-content {
     flex-basis: 60%;
 }
+
 .features-text-content h2 {
     font-size: 2.5rem;
     font-weight: 800; 
     margin-bottom: 10px;
     color: var(--text-dark);
 }
+
 .features-text-content p {
     font-size: 1.1rem;
     color: var(--text-muted);
     max-width: 700px;
 }
 
-/* KARTALAR GRIDI */
 .features-grid-wrapper {
     padding-top: 40px; 
 }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
 }
+
 .feature-card {
     background-color: white;
     padding: 30px 20px;
@@ -414,11 +437,13 @@ a:hover {
     min-height: 250px;
     cursor: pointer;
 }
+
 .feature-card:hover {
     box-shadow: 0 8px 25px rgba(66, 133, 244, 0.15);
     border-color: var(--primary-blue);
     transform: translateY(-5px); 
 }
+
 .feature-card .icon {
     display: flex;
     justify-content: center;
@@ -432,34 +457,42 @@ a:hover {
     stroke: var(--primary-blue);
     transition: background-color 0.3s, transform 0.3s, color 0.3s, stroke 0.3s;
 }
+
 .feature-card:hover .icon {
     background-color: var(--primary-blue); 
     color: white; 
     stroke: white; 
     transform: scale(1.1) rotate(-5deg); 
 }
+
 .feature-card h3 {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 10px;
 }
+
 .feature-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
 
-/* --- 7. COURSES SECTION (Kurslar) --- */
+
+/* =========================
+   7. COURSES SECTION STILI
+   ========================= */
 
 .courses-section {
     padding: 80px 0;
     background-color: var(--bg-light); 
 }
+
 .course-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
     margin-top: 40px;
 }
+
 .course-card {
     background-color: white;
     padding: 25px;
@@ -469,56 +502,68 @@ a:hover {
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
+
 .course-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(66, 133, 244, 0.2);
 }
+
 .course-card .course-icon {
     font-size: 1.5rem;
     color: var(--primary-blue);
     margin-bottom: 15px;
 }
+
 .course-card h4 {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 8px;
     color: var(--text-dark);
 }
+
 .course-card p {
     font-size: 0.95rem;
     color: var(--text-muted);
     margin-bottom: 15px;
 }
+
 .course-card .level-tag {
     display: inline-block;
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
-    background-color: #E6F0FF; /* Och ko'k fon */
+    background-color: #E6F0FF;
     color: var(--primary-blue);
 }
 
-/* --- 8. ONLINE RESOURCES SECTION (Resurslar) --- */
+
+/* ==================================
+   8. ONLINE RESOURCES SECTION STILI
+   ================================== */
 
 .online-resources-section {
     padding: 80px 0;
     background-color: white; 
 }
+
 .online-resources-section .section-title {
     padding: 0 0 50px 0;
 }
+
 .online-resources-section .section-title h2 {
     color: var(--primary-blue); 
     font-size: 2.5rem;
     font-weight: 800;
     letter-spacing: 2px;
 }
+
 .resources-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 25px;
 }
+
 .resource-card {
     background-color: white;
     padding: 15px;
@@ -534,11 +579,13 @@ a:hover {
     transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
     cursor: pointer;
 }
+
 .resource-card:hover {
     box-shadow: 0 8px 30px rgba(66, 133, 244, 0.1);
     transform: scale(1.02); 
     border-color: var(--primary-blue); 
 }
+
 .resource-card .logo-img {
     height: auto;
     max-height: 100px; 
@@ -548,85 +595,104 @@ a:hover {
     object-fit: contain;
     border-radius: 12px;
 }
+
 .resource-card p {
     font-size: 0.9rem;
     color: var(--text-muted);
     margin-top: 15px; 
 }
 
-/* --- 9. CAREER PATHS SECTION (Karyera yo'llari) --- */
+
+/* ==============================
+   9. CAREER PATHS SECTION STILI
+   ============================== */
 
 .career-section {
     padding: 80px 0;
     background-color: var(--bg-light); 
 }
+
 .career-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
     margin-top: 40px;
 }
+
 .career-card {
     background-color: white; 
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid var(--success-green); /* Yashil chegara */
+    border-left: 5px solid var(--success-green);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
+
 .career-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); /* Yashil soya */
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
 }
+
 .career-card .career-icon {
     font-size: 1.5rem;
     color: var(--success-green); 
     margin-bottom: 15px;
 }
+
 .career-card h4 {
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 8px;
     color: var(--text-dark);
 }
+
 .career-card p {
     font-size: 0.95rem;
     color: var(--text-muted);
 }
 
-/* --- 10. STATS SECTION (Statistika) --- */
+
+/* ========================
+   10. STATS SECTION STILI
+   ======================== */
 
 .stats-banner {
     background-color: var(--primary-blue); 
     padding: 60px 0;
     text-align: center;
 }
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     color: white;
 }
+
 .stat-item {
     transition: transform 0.3s; 
 }
+
 .stat-item:hover {
     transform: scale(1.05); 
 }
+
 .stat-item h3 {
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 5px;
     line-height: 1;
 }
+
 .stat-item p {
     font-size: 1.1rem;
     font-weight: 500;
     opacity: 0.85;
 }
 
-/* --- 11. FINAL CTA BANNER SECTION (Yakuniy harakatga chaqiruv) --- */
+
+/* --- 11. FINAL CTA BANNER SECTION --- */
 
 .cta-banner {
     background-color: var(--bg-light); 
@@ -634,16 +700,19 @@ a:hover {
     padding: 80px 0;
     text-align: center;
 }
+
 .cta-banner h2 {
     font-size: 2.5rem; 
     font-weight: 800;
     margin-bottom: 20px;
 }
+
 .cta-banner p {
     font-size: 1.1rem;
     margin-bottom: 40px;
     color: var(--text-muted);
 }
+
 .btn-cta-blue { 
     background-color: var(--primary-blue);
     color: white;
@@ -654,20 +723,23 @@ a:hover {
     border-radius: 6px;
     box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; 
-    /* Button uslublarida ham ishlatilishi uchun */
     text-decoration: none; 
     display: inline-block;
 }
+
 .btn-cta-blue:hover {
     background-color: #357ae8;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(66, 133, 244, 0.5); 
 }
-/* =======================================
-   5. PROJECT STORY (Noldan qahramonlikkacha)
-   ======================================= */
+
+
+/* =================
+   5. PROJECT STORY
+   ================= */
+
 .story-section {
-    padding: 40px 0; /* Bo'shliqni oshirish */
+    padding: 40px 0;
     background-color: var(--color-white);
 }
 
@@ -686,17 +758,16 @@ a:hover {
 .story-image img {
     width: 100%;
     height: auto;
-    border-radius: 20px; /* Yumaloq burchaklarni oshirish */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); /* Boshlang'ich kuchli soya */
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     display: block;
     border: 4px solid transparent; 
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Reaktiv o'tish */
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Rasmga hover stili: Dramatik ta'sir */
 .story-image:hover img {
-    transform: scale(1.05); /* Kuchliroq kattalashtirish */
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5); /* Juda chuqur va dramatik soya */
+    transform: scale(1.05);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
     border-color: var(--primary-blue);
 }
 
@@ -706,7 +777,7 @@ a:hover {
 }
 
 .story-text h2 {
-    font-size: 2.8rem; /* Sarlavhani kattalashtirish */
+    font-size: 2.8rem;
     color: var(--primary-blue);
     margin-bottom: 30px;
     font-weight: 900;
@@ -720,9 +791,10 @@ a:hover {
 }
 
 
-/* =======================================
-   6. CORE VALUES (Asosiy Qadriyatlar)
-   ======================================= */
+/* ================
+   6. CORE VALUES
+   ============== */
+
 .core-values-section {
     padding: 40px 0 80px 0;
     background-color: var(--color-light-gray); 
@@ -741,26 +813,24 @@ a:hover {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
-    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Bahorgi effekt uchun silliq o'tish */
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 2px solid #e0e0e0;
     cursor: pointer;
 }
 
-/* Kartochkaga hover stili: Kuchli effekt */
 .value-card:hover {
-    transform: translateY(-15px); /* Juda kuchli ko'tarilish */
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3); /* Kuchli soya */
-    border-color: var(--secondary-color); /* Chegarani sariq rangga o'zgartirish */
+    transform: translateY(-15px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+    border-color: var(--secondary-color);
 }
 
 .value-card .icon {
-    font-size: 3.2rem; /* Ikonka hajmini oshirish */
+    font-size: 3.2rem;
     color: var(--primary-blue);
     margin-bottom: 20px;
     transition: all 0.5s ease;
 }
 
-/* Ikonkaga hover stili: Rang va aylanma effekt */
 .value-card:hover .icon {
     color: var(--secondary-color); 
     transform: rotateY(360deg);
@@ -776,6 +846,7 @@ a:hover {
 /* =======================================
    7. TEAM DETAILS (Bizning Jamoamiz)
    ======================================= */
+
 .team-details-section {
     padding: 10px 0 25px 0;
     text-align:center;
@@ -802,31 +873,29 @@ a:hover {
     cursor: pointer;
 }
 
-/* Kartochkaga hover stili: Eng dramatik ta'sir */
 .member-card:hover {
     transform: translateY(-12px); 
     box-shadow: 0 25px 50px #3567C7;
+    border-radius: 70px;
 }
 
 .member-avatar {
-    border-radius: 50%; /* Dumaloq rasm */
-    width: 140px; /* Rasmni yanada kattalashtirish */
+    border-radius: 50%;
+    width: 140px;
     height: 140px;
     object-fit: cover;
     margin-bottom: 20px;
-    
-    /* Rangli animatsiya: Qalin va yaltiroq chegara */
     border: 6px solid var(--primary-blue); 
     box-shadow: 0 0 0 10px rgba(0, 96, 168, 0.3); 
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
     transform: scale(1);
 }
 
-/* Rasmga hover stili: Rangli, silliq burilish va kattalashish */
 .member-card:hover .member-avatar {
     border-color: var(--secondary-color); 
     transform: scale(1.15) rotate(-3deg); 
-    box-shadow: 0 0 0 10px rgba(255, 183, 3, 0.6); 
+    box-shadow: 0 0 0 10px #3567C7
+
 }
 
 .member-card h4 {
@@ -841,24 +910,28 @@ a:hover {
     font-weight: 600;
 }
 
+
 /* --- 12. SOCIAL MEDIA SECTION (Ijtimoiy tarmoqlar) --- */
 
 .social-section {
     padding:25px 0;
-    background-color: #3567C7; /* To'qroq ko'k */
+    background-color: #3567C7;
     text-align: center;
 }
+
 .social-section h3 {
     color: white;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 25px;
 }
+
 .social-links {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
+
 .social-link a {
     display: inline-flex;
     justify-content: center;
@@ -872,14 +945,17 @@ a:hover {
     text-decoration: none;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; 
 }
+
 .social-link a:hover {
     background-color: #7AAFFF; 
     transform: translateY(-2px) scale(1.05); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
 }
+
 .social-link .icon-label {
     font-size: 1.5rem;
 }
+
 
 /* --- 13. FOOTER (Pastki qism) --- */
 
@@ -891,6 +967,7 @@ a:hover {
     background-color: white;
     border-top: 1px solid var(--border-color);
 }
+
 
 /* =========================================================================
    HAMBURGER VA NAVIGATSIYA STILI
@@ -905,7 +982,7 @@ a:hover {
     color: var(--color-white); 
     cursor: pointer;
     padding: 5px;
-    z-index: 1001; /* Doimo boshqa elementlar ustida turishi kerak */
+    z-index: 1001;
     line-height: 1; 
     transition: color 0.3s ease;
 }
@@ -919,6 +996,7 @@ a:hover {
     font-size: 2rem; 
 }
 
+
 /* =========================================================================
    RESPONSIVE MEDIA QUERIES (TO'LIQ BARCHA QISMLAR UCHUN)
    ========================================================================= */
@@ -927,10 +1005,9 @@ a:hover {
 @media (max-width: 992px) {
     
     /* --- 1. HEADER & MOBIL NAVIGATSIYA BOSHQARUVI --- */
-    
     .header {
         display: flex; 
-        justify-content: space-between; /* Logo chapda, Tugmalar bloki o'ngda turadi */
+        justify-content: space-between;
         align-items: center;
         padding: 15px 0; 
     }
@@ -944,22 +1021,16 @@ a:hover {
         display: block; 
     }
     
-    /* Ovoz va Hamburger joylashuvini boshqaruvchi qism */
     .header-actions {
         display: flex; 
         align-items: center;
-        
-        /* MUHIM: Tugmalar tartibini teskari qilish (Ovoz tugmasi chaproqqa siljiydi) */
         flex-direction: row-reverse; 
-        
-        /* Tugmalar orasidagi masofani oshirish */
         gap: 30px; 
     }
     .btn-sound-control {
-        min-width: 120px; /* Planshet uchun kenglikni optimallashtirish */
+        min-width: 120px;
     }
     
-    /* Mobil menyu (Nav) stili */
     #main-nav.nav { 
         display: flex; 
         flex-direction: column;
@@ -1071,7 +1142,6 @@ a:hover {
 
 /* KICHIK PLANSHETLAR / KATTA MOBIL (768px dan past) */
 @media (max-width: 768px) {
-    /* --- 1. TEAM DETAILS --- */
     .team-members-list {
         gap: 30px;
     }
@@ -1096,15 +1166,11 @@ a:hover {
     }
     
     .header-actions {
-        /* Tartibni teskari qilish */
         flex-direction: row-reverse; 
-        /* Tugmalar orasidagi masofani oshirish */
         gap: 30px; 
     }
     .btn-sound-control {
         min-width: auto; 
-        
-        /* MUHIM: Matnni sig'dirish uchun padding va font-size optimallashtirildi */
         padding: 6px 14px; 
         white-space: nowrap; 
         font-size: 0.75rem; 
@@ -1128,7 +1194,7 @@ a:hover {
         display: none; 
     }
     
-    /* --- 3. GRID TIZIMLARI (Barchasi bitta ustunda) --- */
+    /* --- 3. GRID TIZIMLARI --- */
     .grid, .course-grid, .resources-grid, .career-grid, .values-grid { 
         grid-template-columns: 1fr; 
         gap: 20px; 
