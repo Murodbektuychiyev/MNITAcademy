@@ -1,35 +1,24 @@
-/* --- Birlashtirilgan JAVASCRIPT KODI (Statistika, Ovoz va Navigatsiya) --- */
-
-// Sahifa to'liq yuklangandan so'ng barcha funksiyalarni ishga tushirish
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ========================================
-    // ** YANGI LOGIKA QO'SHILDI: NAVIGATSIYA BOSHQARUVI **
-    // ========================================
-    const navToggle = document.getElementById('nav-toggle'); // Hamburger tugmasi
-    const nav = document.getElementById('main-nav');         // Navigatsiya menyusi
+
+    const navToggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('main-nav');
 
     if (navToggle && nav) {
         
-        // 1. Hamburger tugmasi bosilganda menyuni ochish/yopish
         navToggle.addEventListener('click', function() {
-            // CSS dagi '.nav.open' klassini qo'shish yoki olib tashlash
             nav.classList.toggle('open'); 
             
-            // Ikonkani o'zgartirish (Hamburger <-> X)
             const icon = navToggle.querySelector('i');
             if (nav.classList.contains('open')) {
-                icon.className = 'fa fa-times'; // Menyuni yopish uchun 'X' ikonka
+                icon.className = 'fa fa-times';
             } else {
-                icon.className = 'fa fa-bars'; // Menyuni ochish uchun 'Hamburger' ikonka
+                icon.className = 'fa fa-bars';
             }
         });
 
-        // 2. Navigatsiya havolalaridan biri bosilganda menyuni yopish
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 nav.classList.remove('open');
-                // Ikonkani 'Hamburger' holatiga qaytarish
                 navToggle.querySelector('i').className = 'fa fa-bars'; 
             });
         });
@@ -41,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
 
     function countUp(el) {
-        // ... (CountUp funksiyasi kodi)
         const target = parseInt(el.getAttribute('data-target'));
         const initialValue = parseInt(el.innerText) || 0;
         
@@ -143,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateButtonState(mutedState);
     };
 
-    // 1. DOKUMENTGA BIRINCHI KLIK TINGLOVCHISI
+
     document.addEventListener('click', function handleInitialClick() {
         if (!initialClickOccurred) {
             toggleSound(false); 
@@ -152,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 2. TUGMA ORQALI BOSHQARUV
+
     if (toggleButton) {
         toggleButton.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -212,8 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
     playTrack(currentTrackIndex);
     updateButtonState(music.muted); 
 
-    // ========================================
-    // E. FOOTER YILINI YANGILASH
-    // ========================================
+
     document.getElementById('year').textContent = new Date().getFullYear();
 });

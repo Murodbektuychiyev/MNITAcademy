@@ -1,6 +1,6 @@
-/* ==================
-   1. ASOSIY STILLAR
-   ================== */
+/* =========================
+   1. ASOSIY QOIDALAR STILI
+   ========================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;700&display=swap');
 
@@ -54,9 +54,9 @@ a:hover {
 }
 
 
-/* ===============================
-   2. HEADER VA NAVIGATSIYA STILI
-   =============================== */
+/* =======================================
+   2. HEADER VA NAVIGATSIYA SECTION STILI
+   ======================================= */
 
 .header-wrapper {
     background-color: white;
@@ -122,9 +122,9 @@ a:hover {
 }
 
 
-/* ===================================
-   3. OVOZNI BOSHQARISH TUGMASI STILI
-   =================================== */
+/* ===========================================
+   3. OVOZNI BOSHQARISH TUGMASI SECTION STILI
+   =========================================== */
 
 .header-actions {
     display: flex;
@@ -341,9 +341,9 @@ a:hover {
 }
 
 
-/* ====================================
-   5. UMUMIY BO'LIM SARLAVHALARI STILI
-   ==================================== */
+/* ============================================
+   5. UMUMIY BO'LIM SARLAVHALARI SECTION STILI
+   ============================================ */
 
 .section-title {
     text-align: center;
@@ -692,7 +692,9 @@ a:hover {
 }
 
 
-/* --- 11. FINAL CTA BANNER SECTION --- */
+/* ===================================
+   11. FINAL CTA BANNER SECTION STILI
+   =================================== */
 
 .cta-banner {
     background-color: var(--bg-light); 
@@ -734,9 +736,9 @@ a:hover {
 }
 
 
-/* =================
-   5. PROJECT STORY
-   ================= */
+/* ================================
+   12. PROJECT STORY SECTION STILI
+   ================================ */
 
 .story-section {
     padding: 40px 0;
@@ -791,9 +793,9 @@ a:hover {
 }
 
 
-/* ================
-   6. CORE VALUES
-   ============== */
+/* ==============================
+   13. CORE VALUES SECTION STILI
+   ============================== */
 
 .core-values-section {
     padding: 40px 0 80px 0;
@@ -843,9 +845,9 @@ a:hover {
 }
 
 
-/* =======================================
-   7. TEAM DETAILS (Bizning Jamoamiz)
-   ======================================= */
+/* ===============================
+   14. TEAM DETAILS SECTION STILI
+   =============================== */
 
 .team-details-section {
     padding: 10px 0 25px 0;
@@ -911,7 +913,9 @@ a:hover {
 }
 
 
-/* --- 12. SOCIAL MEDIA SECTION (Ijtimoiy tarmoqlar) --- */
+/* ===============================
+   15. SOCIAL MEDIA SECTION STILI
+   =============================== */
 
 .social-section {
     padding:25px 0;
@@ -957,7 +961,9 @@ a:hover {
 }
 
 
-/* --- 13. FOOTER (Pastki qism) --- */
+/* =========================
+   16. FOOTER SECTION STILI
+   ========================= */
 
 .footer {
     padding: 30px 0;
@@ -969,11 +975,10 @@ a:hover {
 }
 
 
-/* =========================================================================
-   HAMBURGER VA NAVIGATSIYA STILI
-   ========================================================================= */
+/* ===========================================
+   17. HAMBURGER VA NAVIGATSIYA SECTION STILI
+   =========================================== */
 
-/* Hamburger Icon (Nav-Toggle) uchun asosiy stillar */
 .nav-toggle {
     display: none; /* Desktopda yashirin */
     background: none;
@@ -997,9 +1002,9 @@ a:hover {
 }
 
 
-/* =========================================================================
-   RESPONSIVE MEDIA QUERIES (TO'LIQ BARCHA QISMLAR UCHUN)
-   ========================================================================= */
+/* =============================
+   18. RESPONSIVE MEDIA QUERIES
+   ============================= */
 
 /* PLANSHEYLAR UCHUN (Maks. 992px gacha) */
 @media (max-width: 992px) {
