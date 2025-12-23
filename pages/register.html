@@ -32,7 +32,6 @@
     
     <button id="toggle-video-sound">🔇 Ovoz</button>
     
-    
     <div class="register-container">
         
         <div class="login-logo">
@@ -41,7 +40,7 @@
 
         <h2>Ro'yxatdan o'tish</h2>
         
-        <form action="/register" method="POST">
+        <form id="register-form">
             
             <div class="form-group">
                 <label for="name">To'liq ism</label>
@@ -51,7 +50,6 @@
             <div class="form-group">
                 <label for="region">Viloyat</label>
                 <select id="region" name="region" required>
-                    <option value="">Viloyatni tanlang</option>
                     </select>
             </div>
             
@@ -83,6 +81,6 @@
         
     </div>
 
-    <script src="../js/register.js"></script>
+    <script type="module" src="../js/register.js"></script>
+    
 </body>
-</html>
